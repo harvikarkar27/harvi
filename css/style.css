@@ -1,0 +1,1903 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --white: #fff;
+    --black: #000;
+    --border: #0000001a;
+    ---bg: #e6eaee;
+    --text: #959595;
+    --text2: #55e6a5;
+
+}
+
+body {
+    font-family: 'Sora';
+    background-color: #efefef;
+    position: relative;
+}
+
+::-moz-selection {
+    background-color: var(--black);
+}
+
+::selection {
+    background-color: var(--black);
+}
+
+.container {
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.align-items-center {
+    align-items: center;
+}
+
+.justify-content-center {
+    justify-content: center;
+}
+
+.col-1 {
+    width: 8.33%;
+}
+
+.col-2 {
+    width: 16.66%;
+}
+
+.col-3 {
+    width: 24.99%;
+}
+
+.col-4 {
+    width: 33.33%;
+}
+
+.col-5 {
+    width: 41.66%;
+}
+
+.col-6 {
+    width: 49.99%;
+}
+
+.col-7 {
+    width: 58.32%;
+}
+
+.col-8 {
+    width: 66.65%;
+}
+
+.col-9 {
+    width: 74.98%;
+}
+
+.col-10 {
+    width: 83.31%;
+}
+
+.col-11 {
+    width: 91.64%;
+}
+
+.col-12 {
+    width: 100%;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul li {
+    list-style: none;
+}
+
+.mb {
+    margin-bottom: 50px;
+}
+
+/* HTML: <div class="loader"></div> */
+
+
+.pre_loader {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    z-index: 999;
+}
+
+.loader {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: inline-flex;
+    border: 2px solid #000;
+    --c: no-repeat linear-gradient(#000 0 0) 50%;
+    background: var(--c) calc(50% - 5px)/5px 5px,
+        var(--c) calc(50% + 5px)/5px 5px;
+}
+
+.loader::before,
+.loader::after {
+    content: "12 00 23 40 31 45 60 17 45 32 29 42 50 08 14 07 46 11 03 55";
+    font-size: 30px;
+    font-family: monospace;
+    font-weight: bold;
+    line-height: 1em;
+    height: 1em;
+    width: 2ch;
+    color: #0000;
+    text-shadow: 0 0 0 #000;
+    overflow: hidden;
+    margin: 5px 10px;
+    animation: l3 1s steps(20) infinite;
+}
+
+.loader::before {
+    animation-duration: 1.5s;
+}
+
+@keyframes l3 {
+    100% {
+        text-shadow: 0 -20em 0 #000
+    }
+}
+
+#scroll {
+    position: fixed;
+    bottom: 5%;
+    right: 5%;
+    opacity: 0;
+    visibility: hidden;
+}
+
+#scroll.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+#trail-cursor {
+    position: fixed;
+    display: block;
+    border-radius: 0;
+    transform-origin: center center;
+    mix-blend-mode: difference;
+    top: 0;
+    left: 0;
+    z-index: 10000000000000000;
+}
+
+.circle {
+    pointer-events: none;
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    background: #fff;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/* ================= headr =================== */
+
+header {
+    padding: 20px 0;
+}
+
+header nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header nav .logo h2 {
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+
+
+header nav ul {
+    display: flex;
+    align-items: center;
+}
+
+header nav ul li a {
+    color: #000;
+    font-size: 12px;
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    margin: 0px 5px;
+    transition: all .4s;
+}
+
+header nav ul li a:hover {
+    background-color: var(--white);
+}
+
+header nav .email a {
+    color: var(--black);
+    font-weight: 400;
+    letter-spacing: 1.5px;
+}
+
+/* ================== profile-area ===================== */
+
+.profile-area {
+    background-color: var(---bg);
+    padding: 50px;
+    border-radius: 10px;
+    margin-bottom: 50px;
+}
+
+.profile-area .profile {
+    padding: 40px 20px;
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    text-align: center;
+}
+
+.profile-area .profile .profile-img img {
+    width: 100%;
+    border-radius: 5px;
+    transition: .5s ease;
+    cursor: pointer;
+}
+
+.profile-area .profile .profile-img img:hover {
+    transform: translateY(-50px);
+}
+
+.profile-area .profile .profile-name {
+    margin: 10px 0 20px;
+}
+
+.profile-area .profile .profile-name h5 {
+    font-weight: 500;
+    font-size: 24px;
+}
+
+.profile-area .profile .profile-name span {
+    color: var(--text);
+}
+
+.profile-icons a {
+    color: var(--black);
+    width: 45px;
+    height: 45px;
+    line-height: 45px;
+    display: inline-block;
+    text-align: center;
+    font-size: 14px;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    border-radius: 5px;
+    margin: 0 2px;
+    transition: all .4s;
+}
+
+.profile-icons a:hover {
+    background-color: var(--white);
+}
+
+.intro {
+    padding: 80px 40px;
+}
+
+.intro .intro-content h3 {
+    font-size: 35px;
+    font-weight: 400;
+    text-transform: capitalize;
+    margin-bottom: 5px;
+}
+
+.intro .intro-content h1 {
+    font-size: 45px;
+    font-weight: 400;
+    text-transform: capitalize;
+    margin-bottom: 30px;
+}
+
+.intro .intro-content h1 span {
+    color: var(--text2);
+}
+
+.intro .intro-content a {
+    color: var(--black);
+    padding: 10px 20px;
+    border: 1px solid var(--border);
+    background-color: transparent;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+    display: inline-block;
+    transform: rotateX(30deg);
+    transition: all .5s;
+}
+
+.intro .intro-content a:hover {
+    color: var(--white);
+    background-color: var(--black);
+    transform: rotateX(0deg);
+}
+
+/* ================ about =================== */
+
+.about-area {
+    background-color: var(---bg);
+    padding: 50px;
+    border-radius: 10px 10px 0 0;
+    border-bottom: 1px solid var(--border);
+
+}
+
+.about-area .head {
+    margin-bottom: 50px;
+}
+
+.about-area .head ul {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.about-area .head ul li a {
+    margin: 0 10px;
+    color: var(--black);
+    text-transform: capitalize;
+    position: relative;
+}
+
+.about-area .head ul li a::after {
+    content: "";
+    width: 100%;
+    height: 1px;
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    background: var(--black);
+    transition: 0.5s transform ease;
+    transform: scale3d(0, 1, 1);
+    transform-origin: 100% 50%;
+}
+
+.about-area .head ul li a:hover::after {
+    transform: scale3d(1, 1, 1);
+    transform-origin: 0 50%;
+}
+
+.about-content {
+    padding: 50px;
+    border: 1px solid var(--border);
+    border-radius: 5px;
+}
+
+.about-content h2 {
+    margin-bottom: 20px;
+    font-size: 26px;
+    font-weight: 500;
+}
+
+.about-content p {
+    color: var(--text);
+    line-height: 25px;
+}
+
+.about-content .edu-box {
+    margin-bottom: 10px;
+}
+
+.about-content .edu-box h4 {
+    font-weight: 500;
+    margin-bottom: 5px;
+    font-size: 18px;
+}
+
+/* ==================== skill ===================== */
+
+.skill-area {
+    background-color: var(---bg);
+    padding: 50px;
+    border-bottom: 1px solid var(--border);
+}
+
+.skill-area .skill-title {
+    position: sticky;
+    top: 0px;
+}
+
+.skill-area .skill-title h4 {
+    color: var(--text);
+    font-size: 18px;
+    font-weight: 400;
+    letter-spacing: 3px;
+    margin-bottom: 10px;
+}
+
+.skill-area .skill-title h2 {
+    font-weight: 500;
+    text-transform: capitalize;
+    font-size: 38px;
+}
+
+.skill-area .skill-title h2 span {
+    color: var(--text2);
+}
+
+.skill-area .skill .col-6 {
+    padding: 0px 12px;
+}
+
+.skill-area .skill .skill-box {
+    width: 100%;
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    margin-bottom: 10px;
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+    display: inline-block;
+    transform: rotateX(35deg);
+    transition: all .5s;
+}
+
+.skill-area .skill .skill-box:hover {
+    color: var(--white);
+    background-color: var(--black);
+    transform: rotateX(0deg);
+}
+
+.skill-area .skill .skill-box .skill-logo {
+    width: 30%;
+}
+
+.skill-area .skill .skill-box .skill-logo img {
+    width: 70%;
+}
+
+.skill-area .skill .skill-box h3 {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+/* ---------------------- OUR PROJECT --------------------------- */
+
+.project-area {
+    background-color: var(---bg);
+    padding: 50px;
+    border-bottom: 1px solid var(--border);
+}
+
+.project-area .project-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 50px;
+}
+
+.project-area .project-title h4 {
+    color: var(--text);
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 3px;
+    margin-bottom: 10px;
+}
+
+.project-area .project-title h2 {
+    font-weight: 500;
+    text-transform: capitalize;
+    font-size: 35px;
+}
+
+.project-area .project-title a {
+    color: var(--black);
+    font-size: 14px;
+}
+
+.project-area .col-6 {
+    padding: 0px 12px;
+}
+
+.project-area .view_project {
+    margin-bottom: 20px;
+}
+
+.project-area .view_project .project_img {
+    width: 100%;
+    height: 350px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    padding: 5px;
+    transition: all .5s;
+}
+
+.project-area .view_project:hover .project_img {
+    border: 0.5px solid var(--text2);
+}
+
+.project-area .view_project .project_img img {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}
+
+.project-area .view_project .project-text {
+    padding: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.project-area .view_project .project-text h3 {
+    font-weight: 500;
+    font-size: 25px;
+    margin-bottom: 5px;
+}
+
+.project-area .view_project .project-text span {
+    color: var(--text);
+    font-size: 15px;
+}
+
+.project-area .view_project .project-text a {
+    font-size: 30px;
+    color: var(--black);
+    margin-left: 10px;
+}
+
+/* =================== contact ======================== */
+
+.contact_area {
+    background-color: var(---bg);
+    padding: 100px 50px;
+    border-radius: 0 0 10px 10px;
+}
+
+.contact_area .col-5 {
+    padding-right: 15px;
+}
+
+.contact_area .col-7 {
+    padding-left: 15px;
+}
+
+.contact_area .contact-title h4 {
+    color: var(--text);
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 3px;
+}
+
+.contact_area .contact-title h2 {
+    font-weight: 500;
+    text-transform: capitalize;
+    font-size: 45px;
+    margin: 15px 0;
+}
+
+.contact_area .contact-title p {
+    color: var(--text);
+    font-weight: 300;
+    margin-bottom: 40px;
+}
+
+.contact_area .contact-title a {
+    font-size: 35px;
+    color: var(--text2);
+    text-decoration: underline;
+}
+
+.contact-icons a {
+    color: var(--black);
+    width: 45px;
+    height: 45px;
+    line-height: 45px;
+    display: inline-block;
+    text-align: center;
+    font-size: 14px;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    border-radius: 5px;
+    margin-right: 20px;
+    margin-top: 50px;
+    transition: all .4s;
+}
+
+.contact-icons a:hover {
+    background-color: var(--white);
+}
+
+.contact-right .contact-name {
+    display: flex;
+    align-items: center;
+}
+
+.contact-right .contact-name input:first-child {
+    margin-right: 10px;
+}
+
+.contact-right .contact-name input:last-child {
+    margin-left: 10px;
+}
+
+.contact-right input {
+    width: 100%;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid var(--border);
+    outline: none;
+    background-color: transparent;
+    color: #969DA9;
+}
+
+.contact-right form textarea {
+    width: 100%;
+    height: 250px;
+    resize: vertical;
+    padding: 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid var(--border);
+    outline: none;
+    background-color: transparent;
+    margin-bottom: 10px;
+}
+
+.contact-right form .submit-btn {
+    cursor: pointer;
+    transform: rotateX(35deg);
+    transition: all .5s;
+}
+
+.contact-right form .submit-btn:hover {
+    color: var(--white);
+    background-color: var(--black);
+    transform: rotateX(0deg);
+}
+
+/* ================== footer =================== */
+
+footer {
+    padding: 50px;
+    text-align: center;
+}
+
+footer h5 {
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--text);
+}
+
+footer h5 span {
+    color: var(--text2);
+}
+
+
+
+
+
+
+
+
+
+
+
+@media (min-width:1400px) {
+    .container {
+        max-width: 1320px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (min-width:1200px) and (max-width:1399px) {
+    .container {
+        max-width: 1140px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* ---------------------- OUR PROJECT --------------------------- */
+
+    .project-area .view_project .project_img {
+        height: 300px;
+    }
+
+    .project-area .view_project .project-text h3 {
+        font-size: 20px;
+        margin-bottom: 3px;
+    }
+
+    .project-area .view_project .project-text span {
+        font-size: 13px;
+    }
+
+}
+
+@media (min-width:992px) and (max-width:1199px) {
+    .container {
+        max-width: 960px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* header */
+
+    header nav .email a {
+        font-size: 15px;
+    }
+
+
+    /* ================== profile-area ===================== */
+
+    .intro .intro-content h3 {
+        font-size: 30px;
+    }
+
+    .intro .intro-content h1 {
+        font-size: 40px;
+    }
+
+    .profile-area .profile {
+        padding: 25px 15px;
+    }
+
+    /* ---------------------- OUR PROJECT --------------------------- */
+
+    .project-area .view_project .project_img {
+        height: 250px;
+    }
+
+    .project-area .view_project .project-text h3 {
+        font-size: 20px;
+        margin-bottom: 3px;
+    }
+
+    .project-area .view_project .project-text span {
+        font-size: 13px;
+    }
+
+    /* =================== contact ======================== */
+
+    .contact_area .contact-title h4 {
+        font-size: 14px;
+    }
+
+    .contact_area .contact-title h2 {
+        font-size: 35px;
+    }
+
+    .contact_area .contact-title p {
+        font-size: 14px;
+    }
+
+    .contact_area .contact-title a {
+        font-size: 25px;
+    }
+
+    .contact-icons a {
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+    }
+
+}
+
+
+@media (min-width:768px) and (max-width:991px) {
+    .container {
+        max-width: 720px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* ================= headr =================== */
+
+    header nav .logo h2 {
+        font-size: 22px;
+    }
+
+    header nav ul li a {
+        width: 35px;
+        height: 35px;
+        line-height: 35px;
+    }
+
+    header nav .email a {
+        font-size: 14px;
+        letter-spacing: 1px;
+    }
+
+    /* ================== profile-area ===================== */
+
+    .intro {
+        padding: 40px;
+    }
+
+    .intro .intro-content h3 {
+        font-size: 23px;
+    }
+
+    .intro .intro-content h1 {
+        font-size: 30px;
+    }
+
+    .intro .intro-content a {
+        padding: 7px 15px;
+        font-size: 14px;
+    }
+
+    .profile-area .profile {
+        padding: 20px 12px;
+    }
+
+    .profile-area .profile .profile-img img:hover {
+        transform: translateY(-30px);
+    }
+
+    .profile-area .profile .profile-name h5 {
+        font-size: 18px;
+    }
+
+    .profile-area .profile .profile-name span {
+        font-size: 14px;
+    }
+
+    .profile-icons a {
+        width: 30px;
+        height: 30px;
+        line-height: 30px;
+        font-size: 12px;
+    }
+
+    /* ================ about =================== */
+
+
+    .about-area .head {
+        margin-bottom: 30px;
+    }
+
+    .about-area .head ul li a {
+        font-size: 15px;
+    }
+
+    .about-content {
+        padding: 30px;
+    }
+
+    .about-content h2 {
+        font-size: 20px;
+        margin-bottom: 15px;
+    }
+
+    .about-content p {
+        font-size: 14px;
+    }
+
+    .about-content .edu-box h4 {
+        font-size: 16px;
+    }
+
+    /* ==================== skill ===================== */
+
+    .skill-area .skill-title h4 {
+        font-size: 16px;
+    }
+
+    .skill-area .skill-title h2 {
+        font-size: 30px;
+    }
+
+    .skill-area .skill .skill-box {
+        padding: 15px;
+    }
+
+    .skill-area .skill .skill-box h3 {
+        font-size: 14px;
+    }
+
+    /* ---------------------- OUR PROJECT --------------------------- */
+
+    .project-area .project-title {
+        margin-bottom: 30px;
+    }
+
+    .project-area .col-6 {
+        padding: 0px 7px;
+    }
+
+    .project-area .project-title h4 {
+        font-size: 14px;
+    }
+
+    .project-area .project-title h2 {
+        font-size: 30px;
+    }
+
+
+    .project-area .view_project .project_img {
+        height: 200px;
+    }
+
+    .project-area .view_project .project-text h3 {
+        font-size: 18px;
+        margin-bottom: 3px;
+    }
+
+    .project-area .view_project .project-text span {
+        font-size: 12px;
+    }
+
+    /* =================== contact ======================== */
+
+    .contact_area .contact-title h4 {
+        font-size: 14px;
+    }
+
+    .contact_area .contact-title h2 {
+        font-size: 26px;
+    }
+
+    .contact_area .contact-title p {
+        font-size: 14px;
+    }
+
+    .contact_area .contact-title a {
+        font-size: 20px;
+    }
+
+    .contact-icons a {
+        width: 30px;
+        height: 30px;
+        line-height: 30px;
+        font-style: 12px;
+    }
+
+    .contact-right input {
+        padding: 13px;
+    }
+
+    .contact-right form textarea {
+        height: 180px;
+    }
+}
+
+@media (min-width:576px) and (max-width:767px) {
+    .container {
+        max-width: 540px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* ================= headr =================== */
+
+    header nav .logo h2 {
+        font-size: 20px;
+    }
+
+    header nav ul li a {
+        display: none;
+    }
+
+    header nav .email a {
+        font-size: 14px;
+        letter-spacing: 1px;
+    }
+
+    /* ================== profile-area =====================  */
+
+    .profile-area {
+        padding: 50px 20px;
+    }
+
+    .profile-area .col-4 {
+        width: 100%;
+    }
+
+    .profile-area .col-8 {
+        width: 100%;
+    }
+
+    .intro .intro-content h3 {
+        font-size: 26px;
+    }
+
+    .intro .intro-content h1 {
+        font-size: 35px;
+    }
+
+    .intro {
+        padding: 40px 0;
+    }
+
+    /* ================ about =================== */
+
+    .about-area {
+        padding: 50px 20px;
+    }
+
+
+    .about-area .head {
+        margin-bottom: 30px;
+    }
+
+    .about-area .head ul li a {
+        font-size: 12px;
+    }
+
+    .about-content {
+        padding: 30px 20px;
+
+    }
+
+    .about-content h2 {
+        font-size: 18px;
+        margin-bottom: 15px;
+    }
+
+    .about-content p {
+        font-size: 12px;
+    }
+
+    .about-content .edu-box h4 {
+        font-size: 15px;
+    }
+
+    /* ==================== skill ===================== */
+
+    .skill-area {
+        padding: 50px 20px;
+    }
+
+    .skill-area .col-4 {
+        width: 100%;
+    }
+
+    .skill-area .col-8 {
+        width: 100%;
+    }
+
+    .skill-area .skill-title {
+        position: static;
+        margin-bottom: 20px;
+    }
+
+    .skill-area .skill-title h4 {
+        font-size: 15px;
+        margin-bottom: 5px;
+    }
+
+    .skill-area .skill-title h2 {
+        font-size: 30px;
+    }
+
+    .skill-area .skill .skill-box {
+        padding: 15px;
+    }
+
+    .skill-area .skill .skill-box h3 {
+        font-size: 14px;
+    }
+
+    /* ---------------------- OUR PROJECT --------------------------- */
+
+    .project-area {
+        padding: 50px 20px;
+    }
+
+    .project-area .project-title h4 {
+        font-size: 15px;
+    }
+
+    .project-area .project-title h2 {
+        font-size: 30px;
+    }
+
+    .project-area .col-6 {
+        width: 100%;
+        padding: 0px;
+    }
+
+    .project-area .view_project .project_img {
+        height: 280px;
+    }
+
+    .project-area .view_project .project-text h3 {
+        font-size: 20px;
+        margin-bottom: 3px;
+    }
+
+    .project-area .view_project .project-text span {
+        font-size: 13px;
+    }
+
+    /* =================== contact ======================== */
+
+    .contact_area {
+        padding: 50px 20px;
+    }
+
+    .contact_area .col-5 {
+        width: 100%;
+        padding: 0;
+        margin-bottom: 40px;
+
+    }
+
+    .contact_area .col-7 {
+        width: 100%;
+        padding: 0;
+    }
+
+    .contact_area .contact-title h4 {
+        font-size: 14px;
+    }
+
+    .contact_area .contact-title h2 {
+        font-size: 35px;
+    }
+
+    .contact_area .contact-title p {
+        font-size: 14px;
+    }
+
+    .contact_area .contact-title a {
+        font-size: 25px;
+    }
+
+    .contact-icons a {
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+    }
+
+
+    #trail-cursor {
+        display: none;
+    }
+}
+
+@media (min-width:425px) and (max-width: 575px) {
+    .container {
+        max-width: 100%;
+        padding-left: 20px;
+        padding-right: 20px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* ================= headr =================== */
+
+    header nav .logo h2 {
+        font-size: 20px;
+    }
+
+    header nav ul li a {
+        display: none;
+    }
+
+    header nav .email a {
+        font-size: 14px;
+        letter-spacing: 1px;
+    }
+
+    /* ================== profile-area =====================  */
+
+    .profile-area {
+        padding: 50px 20px;
+    }
+
+    .profile-area .col-4 {
+        width: 100%;
+    }
+
+    .profile-area .col-8 {
+        width: 100%;
+    }
+
+    .intro .intro-content h3 {
+        font-size: 24px;
+    }
+
+    .intro .intro-content h1 {
+        font-size: 32px;
+    }
+
+    .intro {
+        padding: 40px 0;
+    }
+
+    /* ================ about =================== */
+
+    .about-area {
+        padding: 50px 20px;
+    }
+
+
+    .about-area .head {
+        margin-bottom: 30px;
+    }
+
+    .about-area .head ul li a {
+        font-size: 12px;
+        margin: 0 5px;
+    }
+
+    .about-content {
+        padding: 30px 20px;
+
+    }
+
+    .about-content h2 {
+        font-size: 18px;
+        margin-bottom: 15px;
+    }
+
+    .about-content p {
+        font-size: 12px;
+    }
+
+    .about-content .edu-box h4 {
+        font-size: 15px;
+    }
+
+    /* ==================== skill ===================== */
+
+    .skill-area {
+        padding: 50px 20px;
+    }
+
+    .skill-area .col-4 {
+        width: 100%;
+    }
+
+    .skill-area .col-8 {
+        width: 100%;
+    }
+
+    .skill-area .skill-title {
+        position: static;
+        margin-bottom: 20px;
+    }
+
+    .skill-area .skill-title h4 {
+        font-size: 15px;
+        margin-bottom: 5px;
+    }
+
+    .skill-area .skill-title h2 {
+        font-size: 30px;
+    }
+
+    .skill-area .skill .skill-box {
+        padding: 10px;
+    }
+
+    .skill-area .skill .skill-box h3 {
+        font-size: 12px;
+    }
+
+    /* ---------------------- OUR PROJECT --------------------------- */
+
+    .project-area {
+        padding: 50px 20px;
+    }
+
+    .project-area .project-title h4 {
+        font-size: 15px;
+    }
+
+    .project-area .project-title h2 {
+        font-size: 30px;
+    }
+
+    .project-area .col-6 {
+        width: 100%;
+        padding: 0px;
+    }
+
+    .project-area .view_project .project_img {
+        height: 230px;
+    }
+
+    .project-area .view_project .project-text h3 {
+        font-size: 20px;
+        margin-bottom: 3px;
+    }
+
+    .project-area .view_project .project-text span {
+        font-size: 13px;
+    }
+
+    /* =================== contact ======================== */
+
+    .contact_area {
+        padding: 50px 20px;
+    }
+
+    .contact_area .col-5 {
+        width: 100%;
+        padding: 0;
+        margin-bottom: 40px;
+
+    }
+
+    .contact_area .col-7 {
+        width: 100%;
+        padding: 0;
+    }
+
+    .contact_area .contact-title h4 {
+        font-size: 14px;
+    }
+
+    .contact_area .contact-title h2 {
+        font-size: 35px;
+    }
+
+    .contact_area .contact-title p {
+        font-size: 14px;
+    }
+
+    .contact_area .contact-title a {
+        font-size: 25px;
+    }
+
+    .contact-icons a {
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+    }
+
+    .contact-right input {
+        padding: 15px;
+    }
+
+    .contact-right form textarea {
+        height: 200px;
+    }
+
+
+    #trail-cursor {
+        display: none;
+    }
+
+}
+
+@media (min-width:320px) and (max-width: 425px) {
+    .container {
+        max-width: 100%;
+        padding-left: 20px;
+        padding-right: 20px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* ================= headr =================== */
+
+    header nav .logo h2 {
+        font-size: 18px;
+    }
+
+    header nav ul li a {
+        display: none;
+    }
+
+    header nav .email a {
+        font-size: 12px;
+        letter-spacing: 0px;
+    }
+
+    /* ================== profile-area =====================  */
+
+    .profile-area {
+        padding: 50px 20px;
+    }
+
+    .profile-area .col-4 {
+        width: 100%;
+    }
+
+    .profile-area .col-8 {
+        width: 100%;
+    }
+
+    .profile-area .profile {
+        padding: 30px 10px;
+    }
+
+    .profile-area .profile .profile-img img:hover {
+        transform: translateY(-40px);
+    }
+
+
+    .profile-area .profile .profile-name h5 {
+        font-size: 18px;
+    }
+
+    .profile-area .profile .profile-name span {
+        font-size: 12px;
+    }
+
+    .profile-icons a {
+        width: 35px;
+        height: 35px;
+        line-height: 35px;
+        font-size: 12px;
+    }
+
+    .intro .intro-content h3 {
+        font-size: 18px;
+    }
+
+    .intro .intro-content a {
+        padding: 5px 10px;
+    }
+
+    .intro .intro-content h1 {
+        font-size: 22px;
+        margin-bottom: 20px;
+    }
+
+    .intro {
+        padding: 40px 0;
+    }
+
+    /* ================ about =================== */
+
+    .about-area {
+        padding: 50px 20px;
+    }
+
+
+    .about-area .head {
+        margin-bottom: 30px;
+    }
+
+    .about-area .head ul li a {
+        font-size: 8px;
+        margin: 0 5px;
+    }
+
+    .about-content {
+        padding: 30px 20px;
+
+    }
+
+    .about-content h2 {
+        font-size: 16px;
+        margin-bottom: 15px;
+    }
+
+    .about-content p {
+        font-size: 10px;
+        line-height: 1.5;
+    }
+
+    .about-content .edu-box h4 {
+        font-size: 12px;
+    }
+
+    /* ==================== skill ===================== */
+
+    .skill-area {
+        padding: 50px 20px;
+    }
+
+    .skill-area .col-4 {
+        width: 100%;
+    }
+
+    .skill-area .col-8 {
+        width: 100%;
+    }
+
+    .skill-area .skill-title {
+        position: static;
+        margin-bottom: 20px;
+    }
+
+    .skill-area .skill-title h4 {
+        font-size: 12px;
+        margin-bottom: 5px;
+        letter-spacing: 2px;
+
+    }
+
+    .skill-area .skill-title h2 {
+        font-size: 25px;
+    }
+
+    .skill-area .skill .skill-box {
+        padding: 10px;
+    }
+
+    .skill-area .skill .skill-box h3 {
+        font-size: 12px;
+    }
+
+    /* ---------------------- OUR PROJECT --------------------------- */
+
+    .project-area {
+        padding: 50px 20px;
+    }
+
+    .project-area .project-title {
+        margin-bottom: 30px;
+    }
+
+    .project-area .project-title h4 {
+        font-size: 12px;
+        letter-spacing: 2px;
+
+    }
+
+    .project-area .project-title h2 {
+        font-size: 20px;
+    }
+
+    .project-area .col-6 {
+        width: 100%;
+        padding: 0px;
+    }
+
+    .project-area .view_project .project_img {
+        height: 170px;
+    }
+
+    .project-area .view_project .project-text h3 {
+        font-size: 16px;
+        margin-bottom: 0px;
+    }
+
+    .project-area .view_project .project-text span {
+        font-size: 10px;
+    }
+
+    .project-area .view_project {
+        margin-bottom: 10px;
+    }
+
+    /* =================== contact ======================== */
+
+    .contact_area {
+        padding: 50px 20px;
+    }
+
+    .contact_area .col-5 {
+        width: 100%;
+        padding: 0;
+        margin-bottom: 40px;
+
+    }
+
+    .contact_area .col-7 {
+        width: 100%;
+        padding: 0;
+    }
+
+    .contact_area .contact-title h4 {
+        font-size: 12px;
+        letter-spacing: 2px;
+    }
+
+    .contact_area .contact-title h2 {
+        font-size: 26px;
+    }
+
+    .contact_area .contact-title p {
+        font-size: 12px;
+        margin-bottom: 20px;
+
+    }
+
+    .contact_area .contact-title a {
+        font-size: 20px;
+    }
+
+    .contact-icons a {
+        width: 35px;
+        height: 35px;
+        line-height: 35px;
+        font-size: 12px;
+        margin-top: 30px;
+    }
+
+    .contact-right input {
+        padding: 10px;
+    }
+
+    .contact-right form textarea {
+        height: 150px;
+    }
+
+
+    footer {
+        padding: 30px;
+    }
+
+    footer h5 {
+        font-size: 12px;
+    }
+
+
+    #trail-cursor {
+        display: none;
+    }
+}
+
+@media (max-width: 320px) {
+    .container {
+        max-width: 100%;
+        padding-left: 20px;
+        padding-right: 20px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* ================= headr =================== */
+
+    header nav .logo h2 {
+        font-size: 18px;
+    }
+
+    header nav ul li a {
+        display: none;
+    }
+
+    header nav .email a {
+        font-size: 12px;
+        letter-spacing: 0px;
+    }
+
+    /* ================== profile-area =====================  */
+
+    .profile-area {
+        padding: 50px 20px;
+    }
+
+    .profile-area .col-4 {
+        width: 100%;
+    }
+
+    .profile-area .col-8 {
+        width: 100%;
+    }
+
+    .profile-area .profile {
+        padding: 30px 10px;
+    }
+
+    .profile-area .profile .profile-img img:hover {
+        transform: translateY(-40px);
+    }
+
+
+    .profile-area .profile .profile-name h5 {
+        font-size: 18px;
+    }
+
+    .profile-area .profile .profile-name span {
+        font-size: 12px;
+    }
+
+    .profile-icons a {
+        width: 35px;
+        height: 35px;
+        line-height: 35px;
+        font-size: 12px;
+    }
+
+    .intro .intro-content h3 {
+        font-size: 18px;
+    }
+
+    .intro .intro-content a {
+        padding: 5px 10px;
+    }
+
+    .intro .intro-content h1 {
+        font-size: 22px;
+        margin-bottom: 20px;
+    }
+
+    .intro {
+        padding: 40px 0;
+    }
+
+    /* ================ about =================== */
+
+    .about-area {
+        padding: 50px 20px;
+    }
+
+
+    .about-area .head {
+        margin-bottom: 30px;
+    }
+
+    .about-area .head ul li a {
+        font-size: 8px;
+        margin: 0 5px;
+    }
+
+    .about-content {
+        padding: 30px 20px;
+
+    }
+
+    .about-content h2 {
+        font-size: 16px;
+        margin-bottom: 15px;
+    }
+
+    .about-content p {
+        font-size: 10px;
+        line-height: 1.5;
+    }
+
+    .about-content .edu-box h4 {
+        font-size: 12px;
+    }
+
+    /* ==================== skill ===================== */
+
+    .skill-area {
+        padding: 50px 20px;
+    }
+
+    .skill-area .col-4 {
+        width: 100%;
+    }
+
+    .skill-area .col-8 {
+        width: 100%;
+    }
+
+    .skill-area .skill-title {
+        position: static;
+        margin-bottom: 20px;
+    }
+
+    .skill-area .skill-title h4 {
+        font-size: 12px;
+        margin-bottom: 5px;
+        letter-spacing: 2px;
+
+    }
+
+    .skill-area .skill-title h2 {
+        font-size: 25px;
+    }
+
+    .skill-area .skill .skill-box {
+        padding: 10px;
+    }
+
+    .skill-area .skill .skill-box h3 {
+        font-size: 12px;
+    }
+
+    /* ---------------------- OUR PROJECT --------------------------- */
+
+    .project-area {
+        padding: 50px 20px;
+    }
+
+    .project-area .project-title {
+        margin-bottom: 30px;
+    }
+
+    .project-area .project-title h4 {
+        font-size: 12px;
+        letter-spacing: 2px;
+
+    }
+
+    .project-area .project-title h2 {
+        font-size: 20px;
+    }
+
+    .project-area .col-6 {
+        width: 100%;
+        padding: 0px;
+    }
+
+    .project-area .view_project .project_img {
+        height: 170px;
+    }
+
+    .project-area .view_project .project-text h3 {
+        font-size: 16px;
+        margin-bottom: 0px;
+    }
+
+    .project-area .view_project .project-text span {
+        font-size: 10px;
+    }
+
+    .project-area .view_project {
+        margin-bottom: 10px;
+    }
+
+    /* =================== contact ======================== */
+
+    .contact_area {
+        padding: 50px 20px;
+    }
+
+    .contact_area .col-5 {
+        width: 100%;
+        padding: 0;
+        margin-bottom: 40px;
+
+    }
+
+    .contact_area .col-7 {
+        width: 100%;
+        padding: 0;
+    }
+
+    .contact_area .contact-title h4 {
+        font-size: 12px;
+        letter-spacing: 2px;
+    }
+
+    .contact_area .contact-title h2 {
+        font-size: 26px;
+    }
+
+    .contact_area .contact-title p {
+        font-size: 12px;
+        margin-bottom: 20px;
+
+    }
+
+    .contact_area .contact-title a {
+        font-size: 20px;
+    }
+
+    .contact-icons a {
+        width: 35px;
+        height: 35px;
+        line-height: 35px;
+        font-size: 12px;
+        margin-top: 30px;
+    }
+
+    .contact-right input {
+        padding: 10px;
+    }
+
+    .contact-right form textarea {
+        height: 150px;
+    }
+
+
+    footer {
+        padding: 30px;
+    }
+
+    footer h5 {
+        font-size: 12px;
+    }
+
+    #trail-cursor {
+        display: none;
+    }
+}
